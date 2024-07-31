@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(search) 막힘없이 캠핑가자, 캠핏</title>
+
+    <!--home페이지용 스타일-->
+    <link rel="stylesheet" href="camfit_public.css">
+    <!--search페이지용 스타일-->
+    <link rel="stylesheet" href="camfit_search.css">
+</head>
+
+<body>
+    <!-- 좌측패널 -->
+    <div class="wrap_info">
+        <img src="images/resource/background_contents.webp" alt="캠핏 주요설명">
+    </div>
+
+    <!-- 우측패널 -->
+    <div class="wrap"> <!-- class명 "wrap" 유지 -->
+        <header>
+
+            <div class="top-header">
+                <h3 id="title-search">어디로 떠나볼까요?</h3>
+                <button class="btn-top" id="map"></button>
+                <button class="btn-top" id="bookmark"></button>
+            </div>
+            <table class="search-info">
+                <tr>
+                    <td align="center" colspan="2" id="input-name-td">
+                        <img id="input-name-img" src="images/resource/icon/search_12718646.png" alt="">
+                        <input id="input-name" placeholder="..캠핑장명을 검색해 보세요" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <button id="btn-date" type="text" onclick="OpenSelectSchedule()">날짜</button>
+                    </td>
+                    <td align="center"><button id="btn-region" type="text">지역</button></td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <button id="btn-search" onclick="OpenList()">검색하기</button>
+                    </td>
+                </tr>
+            </table>
+        </header>
+
+        <section>
+            <div class="camp-card-box">
+                <button id="close-icon" onclick="CloseList()"></button>
+                <ul>
+                    <li class="camp-card-normal" id="moonstx">
+                        <div class="card-top" id="img">
+                        </div>
+                        <div class="card-middle">
+                            <div id="text01">
+                                <p>오토캠핑</p>
+                            </div>
+                            <div id="text02">
+                                <p id="text02-1">문경STX오토캠핑장</p>
+                                <p id="text02-2"><strong>50,000 </strong>원~</p>
+                            </div>
+                            <div id="text03">
+                                <p id="text03-1">캠핑로그 (259)</p>
+                                <p id="text03-2">온라인 결제</p>
+                            </div>
+                        </div>
+                        <div class="card-bottom" id="text2">
+                            <p>환경 : 산 - 숲 - 계곡 - 기타</p></div>
+                    </li>
+                    <li class="camp-card-normal" id="dreamtimer">
+                        <div class="card-top" id="img">
+                        </div>
+
+                        <div class="card-middle">
+                            <div id="text01">
+                                <p>오토캠핑</p>
+                            </div>
+                            <div id="text02">
+                                <p id="text02-1">꿈꾸는시계오토캠핑펜션</p>
+                                <p id="text02-2"><strong>35,000 </strong>원~</p>
+                            </div>
+                            <div id="text03">
+                                <p id="text03-1">캠핑로그 (31)</p>
+                                <p id="text03-2">온라인 결제</p>
+                            </div>
+                        </div>
+                        <div class="card-bottom" id="text2">
+                            <p>환경 : 계곡 - 산</p></div>
+                    </li>
+                    <li class="camp-card-normal" id="cheongwoo">
+                        <div class="card-top" id="img">
+                        </div>
+
+                        <div class="card-middle">
+                            <div id="text01">
+                                <p>오토캠핑</p>
+                            </div>
+                            <div id="text02">
+                                <p id="text02-1">청우재캠핑</p>
+                                <p id="text02-2"><strong>55,000 </strong>원~</p>
+                            </div>
+                            <div id="text03">
+                                <p id="text03-1">캠핑로그 (259)</p>
+                                <p id="text03-2">온라인 결제</p>
+                            </div>
+                        </div>
+                        <div class="card-bottom" id="text2">
+                            <p>환경 : 산 - 계곡</p></div>
+                    </li>
+                    <li class="camp-card-normal" id="jaecheon">
+                        <div class="card-top" id="img">
+                        </div>
+
+                        <div class="card-middle">
+                            <div id="text01">
+                                <p>오토캠핑</p>
+                            </div>
+                            <div id="text02">
+                                <p id="text02-1">제천 마린힐캠핑장</p>
+                                <p id="text02-2"><strong>50,500 </strong>원~</p>
+                            </div>
+                            <div id="text03">
+                                <p id="text03-1">캠핑로그 (114)</p>
+                                <p id="text03-2">온라인 결제</p>
+                            </div>
+                        </div>
+                        <div class="card-bottom" id="text2">
+                            <p>환경 : 호수 - 산 - 계곡</p></div>
+                    </li>
+                    
+                </ul>
+
+
+            </div>
+            <div class="swiper">
+                <img src="images/resource/bannerAdd/24_07_08_A_68bfdf6f45.png" alt=""id="img001">
+            </div>
+            <div class="swiper" id="img002">
+                <img src="images/resource/bannerAdd/3_A_f6a5ed9a16.png" alt=""id="img002">
+            </div>
+            <div class="swiper" id="img003">
+                <img src="images/resource/bannerAdd/6_1_974d4b410d.png" alt=""id="img003">
+            </div>
+
+            <footer>
+                <div class="footer-logo">
+                    <img src="images/resource/nextedition-1_logo_1640321608_BlackWhite.webp" alt="">
+                </div>
+                <div class="footer-docu">
+                    <a href="">서비스 이용 약관</a>
+                    <a href="">개인정보 처리 방침</a>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdONgYxuf0wCkb_Y1lqJ_leRvvrk4BjB7x28FIWqDbqQgAwPA/viewform">캠핑장
+                        제휴 신청</a>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdONgYxuf0wCkb_Y1lqJ_leRvvrk4BjB7x28FIWqDbqQgAwPA/viewform">광고
+                        제휴 문의</a>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSe_aDkeQlkKP-ThUUp_s-RF7MAy1aK5by-301QsptClS6Xl2g/viewform">스토어
+                        입점 신청</a>
+                </div>
+                <div class="footer-csct">
+                    <button>
+                        <img src="images/resource/icon/headset_4238970.png" alt="">고객센터
+                    </button>
+                    <table>
+                        <tr>
+                            <td class="font-bold">평일</td>
+                            <td>___10:00 ~ 18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">점심시간</td>
+                            <td>___13:00 ~ 14:00</td>
+                        </tr>
+                        <tr>
+                            <td class="font-light" colspan="2">*주말.공휴일 휴무</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer-faq">
+                    <button class="icon-faq"
+                        onclick="window.open('https://campingagain.notion.site/739868253aa846f191c13d1d24e8a9b0')">
+                        <img src="images/resource/icon/search_6048910.png" alt="">자주 묻는 질문
+                    </button>
+                    <button class="btn-circle" id="icon-apple"
+                        onclick="window.open('https://apps.apple.com/us/app/%EC%BA%A0%ED%95%8F-camfit/id1584553599?utm_medium=ios&utm_source=store_button&utm_campaign=camfit_redirect')">
+                    </button>
+                    <button class="btn-circle" id="icon-google"
+                        onclick="window.open('https://play.google.com/store/apps/details?id=kr.co.camfit.app&utm_medium=android&utm_source=store_button&utm_campaign=camfit_redirect')">
+                    </button>
+                    <button class="btn-circle" id="icon-youtube"
+                        onclick="window.open('https://www.youtube.com/channel/UCMKnyCeGYVXEgeskl58gwuQ')">
+                    </button>
+                    <button class="btn-circle" id="icon-instagram"
+                        onclick="window.open('https://www.instagram.com/camfit_official/')">
+                    </button>
+                </div>
+                <div class="footer-company">
+                    <h1>(주)넥스트에디션 사업자정보</h1>
+                    <p>(주)넥스트에디션(캠핏)은 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서, (주)넥스트에디션(캠핏)은 상품의 예약, 이용 및 환불 등과 관련한 책임을 지지
+                        않습니다.</p>
+                </div>
+            </footer>
+        </section>
+
+        <div class="bottom-bar">
+            <button class="btn-home" onclick="location.href='index.html'">
+                <img src="images/resource/icon/home_7754100.png" alt="">
+                홈</button>
+            <button class="btn-search" onclick="location.href='search.html'">
+                <img src="images/resource/icon/search_12718646_green.png" alt="">
+                캠핑장 검색</button>
+            <button class="btn-store" onclick="location.href='store.html'">
+                <img src="images/resource/icon/store_12718660.png" alt="">
+                스토어</button>
+            <button class="btn-life" onclick="location.href='life.html'">
+                <img src="images/resource/icon/camera_15495117.png" alt="">
+                캠핑생활</button>
+            <button class="btn-my" onclick="location.href='my.html'">
+                <img src="images/resource/icon/user_12718691.png" alt="">
+                마이</button>
+        </div>
+
+        <div class="popsel-back"></div>
+        
+        <div class="popsel">
+            
+            <div class="popsel-title">
+                <button id="refresh-icon"></button>
+                <p>일정선택</p>
+                <button id="close-icon" onclick="CloseSelectSchedule()"></button>
+            </div>
+            <div class="popsel-viewer">
+                <table>
+                    <tr class="schedule-title">
+                        <td>입실일</td>
+                        <td class="center-line" rowspan="2"></td>
+                        <td>퇴실일</td>
+                    </tr>
+                    <tr class="schedule-content">
+                        <td>선택해주세요.</td>
+                        <td>선택해주세요.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="popsel-calendar">
+                <div class="month-selector">
+                    <button class="calsel-btn-left"></button>
+                    <div class="title">2025년 7월</div>
+                    <button class="calsel-btn-right"></button>
+
+                </div>
+                <div class="week-days">
+                    <p>일</p><p>월</p><p>화</p><p>수</p><p>목</p><p>금</p><p>토</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun"></p><p></p><p></p><p></p><p>1</p><p>2</p><p id="sat">3</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun">4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p id="sat">10</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun">11</p><p>12</p><p>13</p><p>14</p><p>15</p><p>16</p><p id="sat">17</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun">18</p><p>19</p><p>20</p><p>21</p><p>22</p><p>23</p><p id="sat">24</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun">25</p><p>26</p><p>27</p><p>28</p><p>29</p><p>30</p><p id="sat">31</p>
+                </div>
+                <div class="week-row">
+                    <p id="sun"></p><p></p><p></p><p></p><p></p><p></p><p id="sat"></p>
+                </div>
+                <div class="days-etc">
+                    <div class="rect-blue">
+                        <div></div>
+                        <p>성수기</p>
+                    </div>
+                    <div class="rect-red">
+                        <div></div>
+                        <p>극성수기</p>
+                    </div>
+                </div>
+
+                <!-- <table></table> -->
+            </div>
+
+            <div class="popsel-btn"><button onclick="OpenList()">선택하기</button></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--public페이지(공용)) 자바스크립트-->
+    <script type="text/javascript" src="camfit_public.js"></script>
+    <script type="text/javascript" src="camfit_search.js"></script>
+
+</body>
+
+
+
+
+</html>

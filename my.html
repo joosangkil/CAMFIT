@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(my) 막힘없이 캠핑가자, 캠핏</title>
+
+    <!--home페이지용 스타일-->
+    <link rel="stylesheet" href="camfit_public.css">
+    <!--my페이지용 스타일-->
+    <link rel="stylesheet" href="camfit_my.css">
+</head>
+
+<body>
+
+
+    <!-- 좌측패널 -->
+    <div class="wrap_info">
+        <img src="images/resource/background_contents.webp" alt="캠핏 주요설명">
+    </div>
+
+    <!-- 우측패널 -->
+    <div class="wrap"> <!-- class명 "wrap" 유지 -->
+        <header>
+        <h3 class="my">마이</h3>
+        </header>
+        
+        <a href="#" class="post">
+        <div><div class="post_main">공지</div> [공지] 개인정보 처리방침 개정안내
+        </div></a>
+        <div class="login">
+            <button class="login_post">회원가입</button>
+            <button class="login_post" id="loginButton">로그인</button>
+        </div>
+
+        <section>
+        <h3 class="my">캠핑</h3>
+            <div class="text">
+                <a href="#">비회원 예약조회</a> <br>
+                <a href="#">캠핑 기획전</a> <br>
+                <a href="#">진행중인 이벤트</a> <br>
+                <a href="#">캠핑로그 작성하기</a>   <br>
+            </div>
+
+        <h3 class="my">쇼핑</h3>
+        <div class="text">
+            <a href="#">스토어 기획전</a>
+        </div>
+
+        <h3 class="my">고객센터</h3>
+        <div class="text">
+            <a href="#">공지사항</a><br>
+        </div>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="./images/persnal/my/광고1.png" alt="광고 1">
+            </div>
+            <div class="slide fade">
+                <img src="/images/persnal/my/광고2.jpg" alt="광고 2">
+            </div>
+            <div class="slide fade">
+                <img src="/images/persnal/my/광고3.png" alt="광고 3">
+            </div>
+            <div class="slide fade">
+                <img src="/images/persnal/my/광고4.png" alt="광고 4">
+            </div>
+        </div>
+    </section>
+
+
+
+
+        <div class="bottom-bar">
+            <button class="btn-home" onclick="location.href='index.html'">
+                <img src="images/resource/icon/home_7754100.png" alt="">
+                홈</button>
+            <button class="btn-search" onclick="location.href='search.html'">
+                <img src="images/resource/icon/search_12718646.png" alt="">
+                캠핑장 검색</button>
+            <button class="btn-store" onclick="location.href='store.html'">
+                <img src="images/resource/icon/store_12718660.png" alt="">
+                스토어</button>
+            <button class="btn-life" onclick="location.href='life.html'">
+                <img src="images/resource/icon/camera_15495117.png" alt="">
+                캠핑생활</button>
+            <button class="btn-my" onclick="location.href='my.html'">
+                <img src="images/resource/icon/user_12718691_green.png" alt="">
+                마이</button>
+        </div>
+
+    </div>
+
+
+
+    <!--public페이지(공용)) 자바스크립트-->
+    <script type="text/javascript" src="camf3it_public.js"></script>
+
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginButton").addEventListener("click", function() {
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+</body>
+
+</html>

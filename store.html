@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store</title>
+    <style>
+        body {
+    background-color: rgb(204, 219, 204);
+    background-image: url(images/background_green.jpg);
+    background-size: cover;
+}
+
+.bodywrap {
+    width: auto;
+    height: auto;
+}
+
+.wrap1 {
+    width: 530px;
+    height: 445px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    margin-top: 52px; /* header의 높이만큼 추가 */
+}
+
+header {
+    height: 52px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 766px;
+    transform: translateX(-50%);
+    width: 530px;
+    background-color: #ffffff;
+    /* z-index: 1000; */
+    box-sizing: border-box;
+}
+
+.topleft1 {
+    width: 45.725px;
+    height: 26px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 26px;
+    margin-top: 10px;
+    margin-left: 5px;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+.topSearch {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;box-sizing: border-box;
+}
+
+.topsearch_btn {
+    width: 50px;
+    height: 50px;
+    background-image: url(/images/persnal/store/검색.jpeg);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+        .imgbanner1 {
+            height: 200px;
+            background-color: beige;
+            margin-top: 0px; /* header 높이와 동일하게 설정 */
+        }
+
+        section {
+            height: 168px;
+        }
+
+        .curationWrap1 {
+            height: 66px;
+            width: 498px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .curationWrap1 img {
+            height: 44px;
+            width: 44px;
+        }
+
+        .curationWrap1 > div {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .curationWrap2 {
+            height: 66px;
+            width: 498px;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .curationWrap2 img {
+            height: 44px;
+            width: 44px;
+        }
+
+        .curationWrap2 > div {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .crack1 {
+            height: 8px;
+            width: 530px;
+            background-color: #eff2ff;
+            margin: 0 auto;
+        }
+
+        .wrap2 {
+            width: 530px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .tophearder {
+            width: 498px;
+            height: 40px;
+            margin: 16px 16px 12px 16px;
+            display: flex;
+            position: relative;
+        }
+
+        .topleft2 {
+            height: 26px;
+            width: 138.188px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 26px;
+            margin-top: 6.5px;
+        }
+
+        .topSearch2 {
+            height: 25px;
+            width: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 25px;
+            color: #1a9efe;
+            position: absolute;
+            right: 0px;
+            text-align: center;
+            line-height: 25px;
+            margin-top: 6.25px;
+        }
+
+        .crack2 {
+            height: 8px;
+            width: 530px;
+            background-color: #eff2ff;
+            margin: 0 auto;
+        }
+
+        .imgbanner3 {
+            height: 206px;
+            width: 530px;
+        }
+
+        .topleft3 {
+            height: 26px;
+            width: 130px;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 26px;
+            margin-top: 6.5px;
+        }
+
+        .crack3 {
+            height: 8px;
+            width: 530px;
+            background-color: #eff2ff;
+            margin: 0 auto;
+        }
+
+        .imgbanner3 img {
+            width: 530px;
+            height: 206px;
+        }
+
+        .wrap3 {
+            width: 530px;
+            height: 460px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .topleft4 {
+            height: 26px;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 26px;
+            margin-top: 6.5px;
+        }
+
+        .bottomNav {
+            width: 530px;
+            height: 53px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            z-index: 1000;
+        }
+
+        .bottomNav div {
+            width: 106px;
+            height: 41.9px;
+            text-align: center;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .slide {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            user-select: none;
+            width: 530px;
+            padding: 5px;
+        }
+
+        .slide ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            transition: transform 0.3s ease;
+        }
+
+        .slide_item {
+            width: 144px;
+            height: 144px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-drag: none;
+            cursor: pointer;
+            border: 1px solid red;
+            margin: 5px;
+        }
+
+        .slide_text {
+            font-size: 13px;
+            line-height: 21px;
+            text-align: left;
+            white-space: pre-line;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        .slideshow-container {
+            width: 530px;
+            height: 223px;
+            overflow: hidden;
+            cursor: grab;
+            position: relative;
+            background-color: white;
+        }
+
+        .mySlides {
+            display: none;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .mySlides img {
+            width: 530px;
+            height: 220px;
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 2s;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .counter {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .slide_wrap,
+        .slide_wrap2,
+        .slide_wrap3 {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .slide_wrap ul,
+        .slide_wrap2 ul,
+        .slide_wrap3 ul {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 500px;
+        }
+
+        .slide_wrap li,
+        .slide_wrap2 li,
+        .slide_wrap3 li {
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .slide_wrap img,
+        .slide_wrap2 img,
+        .slide_wrap3 img {
+            width: 144px;
+            height: 144px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .slide_wrap .slide_text,
+        .slide_wrap2 .slide_text,
+        .slide_wrap3 .slide_text {
+            width: 144px;
+            height: 123px;
+        }
+
+        .slide_text strong {
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            justify-content: left;
+        }
+
+        .slide_text {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #f00;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .product-discount {
+            font-size: 12px;
+            color: #f00;
+            margin-right: 4px;
+        }
+
+        .product-tags {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .product-tags span {
+            background: #f80;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        .product-rating {
+            font-size: 12px;
+            color: #f80;
+            margin-top: 8px;
+        }
+
+        .star {
+            color: #f80;
+            margin-right: 2px;
+        }
+
+        .product-card {
+            border-radius: 8px;
+            width: 200px;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .timer {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        
+
+        .product-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .product-description {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 15px;
+            color: black;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .product-discount {
+            font-size: 15px;
+            color: #f00;
+            margin-right: 4px;
+        }
+
+        .product-tags {
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .product-tags span {
+            background: #DDFFBC;
+            color: #23b07e;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        .product-rating {
+            font-size: 12px;
+            color: #f80;
+            margin-top: 8px;
+        }
+
+        .star {
+            color: #f80;
+            margin-right: 2px;
+        }
+
+        .wrap_info {
+
+
+/* border: 1px solid red; */
+
+width: 350px;
+height: auto;
+margin-right: 50px;
+display: block;
+/* display: none; */
+
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////*/
+/* PUBLIC: 공용 //////////////////////////////////////////////////*/
+/* /////////////////////////////////////////////////////////////*/
+
+.btn-home,
+.btn-search,
+.btn-store,
+.btn-life,
+.btn-my {
+    color: gray;
+}
+
+/* .btn-home {
+    color: rgb(78, 193, 105);
+} 
+.btn-search {
+    color: rgb(78, 193, 105);
+} */
+
+.btn-store {
+    color: rgb(78, 193, 105);
+}
+
+/*
+.btn-life {
+    color: rgb(78, 193, 105);
+}
+.btn-my {
+    color: rgb(78, 193, 105);
+} */
+
+
+
+
+
+
+
+    </style>
+
+<!--home페이지용 스타일-->
+<link rel="stylesheet" href="camfit_public.css">
+
+
+</head>
+<body>
+
+<!-- 좌측패널 -->
+<div class="wrap_info">
+    <img src="images/resource/background_contents.webp" alt="캠핏 주요설명">
+</div>
+
+  
+
+    
+
+    <div class="bodywrap">
+        
+
+        <div class="wrap1">
+
+            <header>
+
+
+                <div class="topleft1">스토어</div>
+                <div class="topSearch">
+                    <div class="topsearch_btn" style="cursor: pointer"></div>
+                </div>
+            </header>
+
+
+            <div class="slideshow-container imgbanner1">
+                <div class="mySlides fade">
+                    <img src="/images/persnal/store/스토어배너1.png" alt="배너1" />
+                    <div class="counter">1 / 3</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="/images/persnal/store/스토어배너2.png" alt="배너2" />
+                    <div class="counter">2 / 3</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="/images/persnal/store/스토어배너3.png" alt="배너3" />
+                    <div class="counter">3 / 3</div>
+                </div>
+            </div>
+
+            <section>
+                <nav class="curationWrap1" style="cursor: pointer">
+                    <div><img src="/images/persnal/store/기획전.png" /><br />기획전</div>
+                    <div><img src="/images/persnal/store/베스트.png" /><br />베스트</div>
+                    <div><img src="/images/persnal/store/특가.png" /><br />특가</div>
+                    <div><img src="/images/persnal/store/여름가전.png" /><br />여름가전</div>
+                    <div><img src="/images/persnal/store/푸드마켓.png" /><br />푸드마켓</div>
+                </nav>
+
+                <nav class="curationWrap2" style="cursor: pointer">
+                    <div><img src="/images/persnal/store/텐트.png" /><br />텐트</div>
+                    <div><img src="/images/persnal/store/침낭매트.png" /><br />침낭매트</div>
+                    <div><img src="/images/persnal/store/캠핑가구.png" /><br />캠핑가구</div>
+                    <div><img src="/images/persnal/store/캠핑DIY.png" /><br />캠핑DIY</div>
+                    <div><img src="/images/persnal/store/카테고리.png" /><br />카테고리</div>
+                </nav>
+            </section>
+        </div>
+
+        <div class="crack1"></div>
+
+        <div class="wrap2">
+            <div class="exhibition">
+                <div class="tophearder" style="cursor: pointer">
+                    <div class="topleft2">놓치면 끝! 타임특가</div>
+                    <div class="topSearch2">전체보기</div>
+                </div>
+
+                <div class="slide slide_wrap">
+                    <ul>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가1.jpg" alt="슬라이드1" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">조선땔감</div>
+                                    <div class="product-description">국산 참나무 캠핑장작 20kg</div>
+                                    <div>
+                                        <span class="product-discount">23%</span>
+                                        <span class="product-price">16,900원</span>
+                                    </div>
+                                    <div class="product-tags">
+                                        <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                        <span>무료배송</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <span class="star">★</span>5.0 (0)
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가2.jpg" alt="슬라이드2" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">빈슨메시프</div>
+                                    <div class="product-description">조선땔감 다용도 멀티백 캠핑연료가방</div>
+                                    <div>
+                                        <span class="product-discount">7%</span>
+                                        <span class="product-price">14,900원</span>
+                                    </div>
+                                    <div class="product-tags">
+                                        <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                        <span>무료배송</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <span class="star">★</span>4.0 (0)
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가3.jpg" alt="슬라이드3" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">꾸버스</div>
+                                    <div class="product-description">1+1캔디 칙화제 캠핑 점화체 숯 장작 난로 화로대 개별포장</div>
+                                </div>
+                                <div>
+                                    <span class="product-discount">11%</span>
+                                    <span class="product-price">17,800원</span>
+                                </div>
+                                <div class="product-tags">
+                                    <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                    <span>무료배송</span>
+                                </div>
+                                <div class="product-rating">
+                                    <span class="star">★</span>4.5 (0)
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가4.jpg" alt="슬라이드4" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">캠핑덕</div>
+                                    <div class="product-description">아이언 우드 윈버너 테이블</div>
+                                </div>
+                                <div>
+                                    <span class="product-discount">12%</span>
+                                    <span class="product-price">79,000원</span>
+                                </div>
+                                <div class="product-tags">
+                                    <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                    <span>무료배송</span>
+                                </div>
+                                <div class="product-rating">
+                                    <span class="star">★</span>4.5 (0)
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가5.jpg" alt="슬라이드5" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">꾸버스</div>
+                                    <div class="product-description">접이식 캠핑 화로대 바베큐 그릴 휴대용</div>
+                                </div>
+                                <div>
+                                    <span class="product-discount">11%</span>
+                                    <span class="product-price">26,900원</span>
+                                </div>
+                                <div class="product-tags">
+                                    <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                    <span>무료배송</span>
+                                </div>
+                                <div class="product-rating">
+                                    <span class="star">★</span>4.8 (0)
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="/images/persnal/store/놓치면끝타임특가6.jpg" alt="슬라이드6" />
+                                    <div class="timer" data-timer="12:00:00">12:00:00</div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-title">넥스코</div>
+                                    <div class="product-description">탁상용 무선 선풍기 USB충전식 휴대용 사무실 캠핑 NKF-500G</div>
+                                </div>
+                                <div>
+                                    <span class="product-discount">11%</span>
+                                    <span class="product-price">26,900원</span>
+                                </div>
+                                <div class="product-tags">
+                                    <span style="color: #f87600; background-color: #fff6d6;">특가</span>
+                                    <span>무료배송</span>
+                                </div>
+                                <div class="product-rating">
+                                    <span class="star">★</span>4.8 (0)
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="crack2"></div>
+            </div>
+
+            <div class="imgbanner3">
+                <img src="/images/persnal/store/이미지배너1.png" />
+            </div>
+
+            <div class="tophearder" style="cursor: pointer">
+                <div class="topleft3">3차 릴레이 특가!</div>
+                <div class="topSearch2">전체보기</div>
+            </div>
+
+            <div class="slide slide_wrap2">
+                <ul>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키1.jpg" alt="슬라이드1" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">스미스앤스미시</div>
+                                <div class="product-description">아이스투고 이동식 냉장고30L</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">10%</span>
+                                <span class="product-price">395,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/3차릴레이특가2.jpg" alt="슬라이드2" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">조선캠핑</div>
+                                <div class="product-description">차량용 캠핑 냉장고 낚시 차박 대용량</div>
+                            </div>
+                            <div>
+                                <span class="product-price">268,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/3차릴레이특가3.jpg" alt="슬라이드3" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">XINIX</div>
+                                <div class="product-description">[XINIx] 지닉스 냉장고 45L(배터리포함)[단일상품]</div>
+                            </div>
+                            <div>
+                                <span class="product-price">799,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키1.jpg" alt="슬라이드4" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">XINIX</div>
+                                <div class="product-description">[XINIX]지닉스 냉장고 75L(본체만)[단일상품]</div>
+                            </div>
+                            <div>
+                                <span class="product-price">980,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키1.jpg" alt="슬라이드5" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">ECOFLOW</div>
+                                <div class="product-description">ECOFLOW 에코플로우휴대용 냉장고 글래시아BX 100L</div>
+                            </div>
+                            <div>
+                                <span class="product-price">1,199,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/3차릴레이특가6.jpg" alt="슬라이드6" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">코드26</div>
+                                <div class="product-description">차량용 냉장고 휴대용 캠핑 냉동고 NB-ICF-A60BL</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrap3">
+            <div class="tophearder" style="cursor: pointer">
+                <div class="topleft4">홈캠핑 치트키</div>
+                <div class="topSearch2">전체보기</div>
+            </div>
+
+            <div class="slide slide_wrap3">
+                <ul>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키1.jpg" alt="슬라이드1" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">엘투리버스</div>
+                                <div class="product-description">3단 접이식 캠핑우드쉘프 <br>원목선반 캠핑테이블<br>(수납가방포함)</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키2.jpg" alt="슬라이드2" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">퓨어코치</div>
+                                <div class="product-description">LED무드등 미니제습기<br>DH850</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키3.jpg" alt="슬라이드3" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">캠가</div>
+                                <div class="product-description">3단,4단 우드 선반캠핑쉘프</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키4.jpg" alt="슬라이드4" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">캠가</div>
+                                <div class="product-description">너도밤나무 우드<br>태슬피크닉 파라솔</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키5.jpg" alt="슬라이드5" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">한스캠핑</div>
+                                <div class="product-description">버티컬 3단 블랙 알루미늄<br>쉘프,캠핑 경량 선반</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/images/persnal/store/홈캠핑치트키6.jpg" alt="슬라이드6" />
+                            </div>
+                            <div class="product-info">
+                                <div class="product-title">백운몽</div>
+                                <div class="product-description">얼음골 열무김치 국수 5인분 세트</div>
+                            </div>
+                            <div>
+                                <span class="product-discount">21%</span>
+                                <span class="product-price">690,000원</span>
+                            </div>
+                            <div class="product-tags">
+                                <span>무료배송</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <nav class="bottomNav">
+            <div><img src="/images/persnal/store/캠핑홈.png" /><br />홈</div>
+            <div><img src="/images/persnal/store/캠핑장검색.png" /><br />캠핑장 검색</div>
+            <div><img src="/images/persnal/store/캠핑스토어.png" /><br />스토어</div>
+            <div><img src="/images/persnal/store/캠핑생활.png" /><br />캠핑생활</div>
+            <div><img src="/images/persnal/store/캠핑마이.png" /><br />마이</div>
+        </nav> -->
+
+
+        <div class="bottom-bar">
+            <button class="btn-home" onclick="location.href='index.html'">
+                <img src="images/resource/icon/home_7754100.png" alt="">
+                홈</button>
+            <button class="btn-search" onclick="location.href='search.html'">
+                <img src="images/resource/icon/search_12718646.png" alt="">
+                캠핑장 검색</button>
+            <button class="btn-store" onclick="location.href='store.html'">
+                <img src="images/resource/icon/store_12718660_green.png" alt="">
+                스토어</button>
+            <button class="btn-life" onclick="location.href='life.html'">
+                <img src="images/resource/icon/camera_15495117.png" alt="">
+                캠핑생활</button>
+            <button class="btn-my" onclick="location.href='my.html'">
+                <img src="images/resource/icon/user_12718691.png" alt="">
+                마이</button>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        let startX = 0;
+        let isDragging = false;
+
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000);
+            updateCounter();
+        }
+
+        function updateCounter() {
+            const counter = document.querySelectorAll(".counter");
+            counter.forEach((element, index) => {
+                if (index + 1 === slideIndex) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+        const slideshowContainer = document.querySelector(".slideshow-container");
+        slideshowContainer.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            slideshowContainer.style.cursor = "grabbing";
+        });
+
+        slideshowContainer.addEventListener("mouseup", (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            slideshowContainer.style.cursor = "grab";
+            handleSlideChange(e.clientX - startX);
+        });
+
+        slideshowContainer.addEventListener("mouseleave", () => {
+            isDragging = false;
+            slideshowContainer.style.cursor = "grab";
+        });
+
+        slideshowContainer.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            const moveX = e.clientX - startX;
+            if (Math.abs(moveX) > 50) {
+                handleSlideChange(moveX);
+                isDragging = false;
+                slideshowContainer.style.cursor = "grab";
+            }
+        });
+
+        slideshowContainer.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slideshowContainer.addEventListener("touchend", (e) => {
+            const moveX = e.changedTouches[0].clientX - startX;
+            handleSlideChange(moveX);
+        });
+
+        function handleSlideChange(moveX) {
+            let slides = document.getElementsByClassName("mySlides");
+            slides[slideIndex - 1].style.display = "none";
+            if (moveX > 0) {
+                slideIndex--;
+                if (slideIndex < 1) {
+                    slideIndex = slides.length;
+                }
+            } else {
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+            }
+            slides[slideIndex - 1].style.display = "block";
+            updateCounter();
+        }
+
+        function initializeSlideDrag(slideWrapClass) {
+            let isSlideDragging = false;
+            let startSlideX = 0;
+            let currentSlideIndex = 0;
+
+            const slideWrap = document.querySelector(slideWrapClass + " ul");
+            const slideItems = document.querySelectorAll(slideWrapClass + " li");
+
+            slideWrap.addEventListener("mousedown", (e) => {
+                isSlideDragging = true;
+                startSlideX = e.clientX;
+                slideWrap.style.cursor = "grabbing";
+            });
+
+            slideWrap.addEventListener("mouseup", (e) => {
+                if (!isSlideDragging) return;
+                isSlideDragging = false;
+                slideWrap.style.cursor = "grab";
+                handleSlideDrag(e.clientX - startSlideX);
+            });
+
+            slideWrap.addEventListener("mouseleave", () => {
+                isSlideDragging = false;
+                slideWrap.style.cursor = "grab";
+            });
+
+            slideWrap.addEventListener("mousemove", (e) => {
+                if (!isSlideDragging) return;
+                const moveX = e.clientX - startSlideX;
+                slideWrap.style.transform = `translateX(${
+                    -currentSlideIndex * 100 + (moveX / slideWrap.clientWidth) * 100
+                }%)`;
+            });
+
+            slideWrap.addEventListener("touchstart", (e) => {
+                startSlideX = e.touches[0].clientX;
+            });
+
+            slideWrap.addEventListener("touchend", (e) => {
+                const moveX = e.changedTouches[0].clientX - startSlideX;
+                handleSlideDrag(moveX);
+            });
+
+            function handleSlideDrag(moveX) {
+                if (Math.abs(moveX) > 50) {
+                    if (moveX > 0) {
+                        currentSlideIndex--;
+                        if (currentSlideIndex < 0)
+                            currentSlideIndex = slideItems.length - 1;
+                    } else {
+                        currentSlideIndex++;
+                        if (currentSlideIndex >= slideItems.length)
+                            currentSlideIndex = 0;
+                    }
+                }
+                slideWrap.style.transform = `translateX(${
+                    -currentSlideIndex * 100
+                }%)`;
+            }
+        }
+
+        initializeSlideDrag(".slide_wrap");
+        initializeSlideDrag(".slide_wrap2");
+        initializeSlideDrag(".slide_wrap3");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var searchButton = document.querySelector(".topsearch_btn");
+            if (searchButton) {
+                searchButton.addEventListener("click", function() {
+                    window.location.href = 'store_search.html';
+                });
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var store_product = document.querySelector(".product-image", "product-info");
+            if (store_product) {
+                store_product.addEventListener("click", function() {
+                    window.location.href = 'store_product.html';
+                });
+            }
+        });
+
+        function initializeTimers() {
+            const timers = document.querySelectorAll('.timer');
+            timers.forEach(timer => {
+                const timeParts = timer.dataset.timer.split(':');
+                const endTime = new Date();
+                endTime.setHours(endTime.getHours() + parseInt(timeParts[0]));
+                endTime.setMinutes(endTime.getMinutes() + parseInt(timeParts[1]));
+                endTime.setSeconds(endTime.getSeconds() + parseInt(timeParts[2]));
+
+                const updateTimer = () => {
+                    const now = new Date();
+                    const remainingTime = endTime - now;
+
+                    if (remainingTime <= 0) {
+                        timer.innerHTML = "00:00:00";
+                    } else {
+                        const hours = String(Math.floor(remainingTime / (1000 * 60 * 60))).padStart(2, '0');
+                        const minutes = String(Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                        const seconds = String(Math.floor((remainingTime % (1000 * 60)) / 1000)).padStart(2, '0');
+                        timer.innerHTML = `${hours}:${minutes}:${seconds}`;
+                    }
+                };
+
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var searchButton = document.querySelector(".topsearch_btn");
+            if (searchButton) {
+                searchButton.addEventListener("click", function() {
+                    window.location.href = 'store_search.html';
+                });
+            }
+
+            initializeTimers();
+        });
+    </script>
+
+    <!--public페이지(공용)) 자바스크립트-->
+    <script type="text/javascript" src="camfit_public.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+header {
+    /* border: 1px solid violet; */
+    width: 530px;
+    height: 52px;
+    line-height: 52px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 0px;
+}
+
+header img {
+    /* 좌상단 로고 */
+    width: 80px;
+
+    position: absolute;
+    left: 12px;
+}
+
+header button {
+    width: 57px;
+    height: 28px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 11px;
+
+    position: absolute;
+    right: 12px;
+
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: lightgreen;
+}
+
+
+/* 섹션 */
+section {
+    margin-top: 60px;
+    height: 1000px;
+    /* border: 1px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+
+}
+
+/* 섹션: 움직이는 배너광고 (스와이프)) */
+section .swiper {
+    /* border: 1px solid green; */
+    width: 530px;
+    height: 230px;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+}
+
+section .swiper img {
+    width: 500px;
+    border-radius: 10px;
+}
+
+/* 섹션: 아이콘 메뉴 */
+section .icon-menu {
+    /* border: 1px solid red; */
+    width: 530px;
+    height: 168px;
+
+    position: absolute;
+    top: 300px;
+
+    display: flex;
+    justify-content: center;
+}
+
+section .icon-menu table {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section .icon-menu table tr {
+    /* border: 1px solid orange; */
+    display: flex;
+}
+
+section .icon-menu table tr td {
+    /* border: 1px solid orange; */
+    width: 59px;
+    height: 66px;
+    margin: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+section .icon-menu table tr td img {
+    width: 44px;
+    height: 44px;
+
+    position: absolute;
+    top: 0px;
+}
+
+section .icon-menu table tr td p {
+    margin: 0;
+    position: absolute;
+    bottom: 3px;
+}
+
+
+/* 섹션: 일정관리 이동버튼 (배너) */
+section .banner-schedule {
+    width: 498px;
+    height: 80px;
+    background-color: whitesmoke;
+
+    border-radius: 10px;
+
+    position: absolute;
+    top: 480px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+
+section .banner-schedule img {
+    width: 52px;
+    height: 52px;
+    margin: 10px;
+}
+
+section .banner-schedule h4 {
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+section .banner-schedule p {
+    margin-top: 3px;
+    margin-bottom: 0px;
+
+    font-size: 13px;
+}
+
+
+
+
+
+section .summary-store {
+    border: 1px solid blue;
+    width: 530px;
+    height: 280px;
+
+    position: absolute;
+    top: 580px;
+}
+
+section .summary-life {
+    border: 1px solid blue;
+    width: 530px;
+    height: 280px;
+
+    position: absolute;
+    top: 880px;
+}
+
+
+
+
+
+section footer {
+    width: 530px;
+    height: 446px;
+    background-color: whitesmoke;
+
+    position: absolute;
+    bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+footer .footer-logo {
+    width: 498px;
+    height: 33px;
+    margin-top: 22px;
+
+    border: 1px solid lightgray;
+    border-width: 0 0 1px;
+
+    margin-left: 5px;
+}
+
+footer .footer-logo img {
+    /* border: 1px solid red; */
+    width: 80px;
+}
+
+footer .footer-docu {
+    width: 498px;
+    height: 75px;
+
+    border: 1px solid lightgray;
+    border-width: 0 0 1px;
+}
+
+footer .footer-docu a {
+    color: gray;
+    text-decoration-line: none;
+    font-size: 12px;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 14px;
+
+    display: inline-block;
+}
+
+footer .footer-csct {
+    width: 498px;
+    height: 86px;
+    padding-left: 10px;
+
+    border: 1px solid lightgray;
+    border-width: 0 0 1px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+footer .footer-csct button {
+    width: 90px;
+    height: 55px;
+    background-color: white;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer-csct button:hover {
+    background-color: lightgreen;
+}
+
+footer .footer-csct button img {
+    width: 17px;
+    margin-right: 3px;
+
+    position: relative;
+    top: 3px;
+}
+
+footer .footer-csct table {
+
+    position: relative;
+    top: 2px;
+    left: 15px;
+
+    font-size: 13px;
+    color: gray;
+}
+
+footer .font-bold {
+    font-weight: 700;
+}
+
+footer .font-light {
+    font-weight: 100;
+}
+
+footer .footer-faq {
+    width: 498px;
+    height: 59px;
+    padding-left: 10px;
+
+    border: 1px solid lightgray;
+    border-width: 0 0 1px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+footer .icon-faq {
+    width: 128px;
+    height: 30px;
+    outline: none;
+
+    background-color: white;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+footer .icon-faq:hover {
+    background-color: lightgreen;
+}
+
+footer .icon-faq img {
+    width: 18px;
+    margin-right: 2px;
+    
+    position: relative;
+    top: 0px;
+    left: -2px;
+}
+
+
+/* 원형버튼 공용 */
+footer .btn-circle {   
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+    cursor: pointer; 
+
+    margin-left: 14px;
+}
+
+footer .btn-circle:hover {
+    background-color: lightgreen;
+}
+
+footer #icon-apple {
+    background-image: url(images/resource/icon/apple_731985.png);
+    margin-left: 24px;
+}
+
+footer #icon-google {
+    background-image: url(images/resource/icon/google-play_1532483.png);
+    margin-left: 10px;
+}
+
+footer #icon-youtube {
+    background-image: url(images/resource/icon/youtube_733646.png);
+    margin-left: 10px;
+}
+
+footer #icon-instagram {
+    background-image: url(images/resource/icon/instagram_6422200.png);
+    margin-left: 10px;
+}
+
+
+/* 회사소개 (사업자정보) */
+footer .footer-company {
+    width: 498px;
+    height: 59px;
+    padding-left: 10px;
+
+    border: 1px solid lightgray;
+    /* border-width: 0 0 1px; */
+    border: none;
+}
+
+footer .footer-company h1 {
+    font-size: 13px;
+}
+
+footer .footer-company p {
+    font-size: 13px;
+    font-weight: 100;
+}
+
+
+
+
+
+
+/* PUBLIC: 공용 */
+
+.btn-home, .btn-search, .btn-store, .btn-life, .btn-my {
+    color: gray;
+}
+
+.btn-home {
+    color: rgb(78, 193, 105);
+}
+/* .btn-search {
+    color: rgb(78, 193, 105);
+}
+.btn-store {
+    color: rgb(78, 193, 105);
+}
+.btn-life {
+    color: rgb(78, 193, 105);
+}
+.btn-my {
+    color: rgb(78, 193, 105);
+} */

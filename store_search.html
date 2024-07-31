@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>store_search.html</title>
+    <style>
+
+      
+      .wrapWhol {
+        width: 530px;
+        height: 944px;
+        min-height: 945px;
+        display: block;
+        /* border: 1px solid black; */
+      }
+
+      .header {
+        width: 530px;
+        height: 52px;
+        padding: 0 14px 0 14px;
+        display: flex;
+        /* border: 1px solid black; */
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      .search {
+        width: 464px;
+        height: 36px;
+        /* border: 1px solid black; */
+        border-radius: 6px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        align-self: center;
+        /* background-color: #eff3f3; */
+      }
+
+      .search_bar {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      .search_bar input {
+        width: 417px;
+        height: 19px;
+        border: none; /* Remove the border */
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19px;
+        display: block;
+        background-color: #eff3f3;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .search_bar_img {
+        width: 24px;
+        height: 24px;
+        margin: 5px;
+        background-image: url(/images/persnal/store/검색2.png);
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+      }
+
+      .header_tags {
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      .wrap1 {
+        width: 530px;
+        height: 164px;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+      }
+
+      .wrap1 .titleBox {
+        width: 530px;
+        height: 40px;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .wrap1 .titleBox input {
+        width: 100px;
+        height: 25px;
+        align-items: center;
+        padding-left: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+      }
+
+      .keywordBox {
+        width: 498px;
+        height: 68px;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        margin: 0 16px 0 16px;
+        display: flex;
+        flex-wrap: wrap; /* Added to wrap the divs within the container */
+      }
+
+      .keywordBox > div {
+        background-color: #eff3f3;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px; /* Adjust padding as needed */
+        min-width: 60px; /* Adjust width as needed */
+      }
+
+      .keywordBox span {
+        font-size: 13px;
+        font-weight: 500;
+        color: #2e3132;
+        min-height: auto;
+        min-width: auto;
+        cursor: pointer;
+      }
+      
+      .recommenddation_tittle {
+        width: 530px;
+        height: 40px;
+        box-sizing: border-box;
+        margin: 0 0 8px 0;
+        padding: 0 16px 0 16px;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+      }
+
+      .recommenddation_tittle > div {
+        /* border: 1px solid black; */
+        font-size: 17px;
+        font-weight: 700;
+        box-sizing: border-box;
+      }
+      
+      .recommenddation_list {
+        /* border: 1px solid black; */
+        overflow: hidden;
+        display: flex;
+      }
+
+      .recommenddation_list ul {
+        display: flex;
+        padding-left: 5px;
+        gap: 5px; /* Add gap between items */
+      }
+
+      .recommenddation_list ul li {
+        list-style: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        /* border: 1px solid black; */
+        padding: 10px;
+        position: relative;
+      }
+
+      .recommenddation_list img {
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image img {
+        width: 109px;
+        height: 109px;
+      }
+
+      .product-title {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .product-description {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 8px;
+      }
+
+      .product-price {
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0px;
+        left: 30px;
+      }
+
+      .product-discount {
+        font-size: 15px;
+        color: #f00;
+        margin-right: 4px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrapWhol">
+      <div class="header">
+        <div class="search">
+          <div class="search_bar">
+            <input type="text" placeholder="나에게 맞는 캠핑 아이템 검색">
+            <div class="search_bar_img"></div>
+          </div>
+        </div>
+        <div class="header_tags"><span>닫기</span></div>
+      </div>
+
+      <section>
+        <div class="wrap1">
+          <div class="titleBox">
+            <input type="text" placeholder="추천키워드" />
+          </div>
+          <div class="keywordBox">
+            <div><span>파워뱅크</span></div>
+            <div><span>에어건</span></div>
+            <div><span>원코 스트래치 랜턴</span></div>
+            <div><span>캠핑의자</span></div>
+            <div><span>에어배드</span></div>
+            <div><span>화로대</span></div>
+            <div><span>그리들</span></div>
+            <div><span>자충매트</span></div>
+            <div><span>캠핑 랜턴</span></div>
+            <div><span>전기매트</span></div>
+          </div>
+        </div>
+
+        <div class="recommenddation_tittle">
+          <div><span>추천 캠핑템</span></div>
+        </div>
+        <div class="recommenddation_list">
+          <ul>
+            <li>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="/images/persnal/store/추천캠핑템1.png" alt="슬라이드1" />
+                </div>
+                <div class="product-info">
+                  <div class="product-title">인텍스</div>
+                  <div class="product-description">정품 에이매트</div>
+                </div>
+                <div>
+                  <span class="product-discount"></span>
+                  <span class="product-price">48,900원</span>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="/images/persnal/store/추천캠핑템2.jpg" alt="슬라이드1" />
+                </div>
+                <div class="product-info">
+                  <div class="product-title">라그렌</div>
+                  <div class="product-description">문라이트 무선LED<Br>캠핑써큘레이터 선풍기</div>
+                </div>
+                <div>
+                  <span class="product-discount">40%</span>
+                  <span class="product-price">59,00원</span>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="/images/persnal/store/추천캠핑템3.png" alt="슬라이드1" />
+                </div>
+                <div class="product-info">
+                  <div class="product-title">오늘의 캠핑</div>
+                  <div class="product-description">확장형 접이식 오픈<br>광폭타이어 폴딩<br></div>
+                </div>
+                <div>
+                  <span class="product-discount">39%</span>
+                  <span class="product-price">109,000원</span>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="/images/persnal/store/추천캠핑템4.png" alt="슬라이드1" />
+                </div>
+                <div class="product-info">
+                  <div class="product-title">오투라이프캠프</div>
+                  <div class="product-description">에크루 아론디 <br>8각 허브쉘터</div>
+                </div>
+                <div>
+                  <!-- <span class="product-discount">39%</span> -->
+                  <span class="product-price">109,000원</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+    </div>
+    </section>
+  </body>
+</html>

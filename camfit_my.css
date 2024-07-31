@@ -1,0 +1,141 @@
+.wrap {
+    width: 530px;
+    height:auto;
+    /* border: 1px solid red; */
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrap_info {
+
+    width: 350px;
+    height: auto;
+    margin-right: 50px;
+    display: block;
+    /* display: none; */
+
+}
+.wrap_info img {
+    width: 300px;
+    
+}
+section {
+    height: 900px;
+
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    padding: 10px;
+   
+}
+
+.my{
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+.text a {
+    text-decoration: none;
+    color: gray;
+}
+.post{
+    border-radius: 10px;
+    padding: 11px 16px 12px;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    background-color: #f9f9f9;
+}
+.post_main{
+    font-weight: bold;
+    display: inline-block;
+}
+.login{
+    margin: 0px 0px -8px;
+    padding: 16px 16px;
+}
+.login_post{
+    cursor: pointer;
+    width: 244px;
+    height: 52px;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 0.1px;
+    border-color: gray;
+    transition: background-color 0.3;
+}
+.login_post:active{
+    background-color: #e0e0e0;
+}
+.login_post:hover{
+    background-color: #d0d0d0;
+}
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+img{
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* PUBLIC: 공용 */
+
+.btn-home, .btn-search, .btn-store, .btn-life, .btn-my {
+    color: gray;
+}
+
+/* .btn-home {
+    color: rgb(78, 193, 105);
+}
+.btn-search {
+    color: rgb(78, 193, 105);
+}
+.btn-store {
+    color: rgb(78, 193, 105);
+}
+.btn-life {
+    color: rgb(78, 193, 105);
+} */
+.btn-my {
+    color: rgb(78, 193, 105);
+}

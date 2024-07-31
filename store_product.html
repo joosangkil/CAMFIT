@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>store_product</title>
+    <style>
+            .wrpaWhol {
+        padding-top: 52px;
+        padding-bottom: 77px;
+      }
+
+            header {
+        width: 530px;
+        height: 52px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        background-color: white;
+        z-index: 1000; /
+      }
+
+            .backBtn a {
+              color: black;
+              text-decoration: none;
+              font-size: 24px;
+              box-sizing: border-box;
+              margin-left: 10px;
+            }
+
+            .homeBtn {
+              width: 80px;
+              height: 16px;
+              background-image: url(/images/persnal/store/캠핏로고.png);
+              background-position: center;
+              background-size: cover;
+              cursor: pointer;
+            }
+
+            .product_searchBtn {
+              width: 22px;
+              height: 22px;
+              background-image: url(/images/persnal/store/검색2.png);
+              background-position: center;
+              background-size: cover;
+              box-sizing: border-box;
+              margin-right: 10px;
+              cursor: pointer;
+            }
+
+            .store_etc {
+              width: 530px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              padding: 0 10px;
+              box-sizing: border-box;
+            }
+
+            .store_etcWrap {
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              color: #808080;
+              font-weight: 500;
+            }
+
+            .store_etcWrap a {
+              text-decoration: none;
+              color: #808080;
+            }
+
+            .store_etcWrap .current {
+              color: #000;
+              font-weight: bold;
+            }
+
+            .store_etcWrap .separator {
+              margin: 0 5px;
+            }
+
+            .introduceimg {
+              width: 530px;
+              height: 530px;
+              background-image: url(/images/persnal/store/떌감소개.png);
+              box-sizing: border-box;
+              background-position: center;
+              background-size: cover;
+              cursor: pointer;
+            }
+
+            .modal {
+              display: none;
+              position: fixed;
+              z-index: 1;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgb(0, 0, 0);
+              background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .modal-content {
+              margin: 15% auto;
+              display: block;
+              width: 80%;
+              max-width: 700px;
+            }
+
+            .close {
+              position: absolute;
+              top: 20px;
+              right: 35px;
+              color: #f1f1f1;
+              font-size: 40px;
+              font-weight: bold;
+              transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+              color: #bbb;
+              text-decoration: none;
+              cursor: pointer;
+            }
+
+            .brand {
+              width: 530px;
+              height: 50px;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .brand > div {
+              margin-left: 10px;
+              color: #83989c;
+              font-size: 14px;
+              font-weight: 500;
+            }
+
+            .brandUrl {
+              width: 24px;
+              height: 24px;
+              box-sizing: border-box;
+              background-image: url(/images/persnal/store/공유.png);
+              background-position: center;
+              background-size: cover;
+              margin-right: 10px;
+              cursor: pointer;
+            }
+
+            .alert {
+              display: none;
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-color: white;
+              padding: 20px;
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+              z-index: 1000;
+            }
+
+            .alert .alert-title {
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+
+            .alert .alert-content {
+              margin-bottom: 20px;
+            }
+
+            .alert .alert-button {
+              display: flex;
+              justify-content: center;
+            }
+
+            .alert .alert-button button {
+              background-color: #007bff;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              cursor: pointer;
+              border-radius: 5px;
+            }
+
+            .alert .alert-button button:hover {
+              background-color: #0056b3;
+            }
+
+            .Description {
+              font-size: 16px;
+              font-weight: 500;
+              margin-left: 10px;
+              margin-top: -10px;
+            }
+
+            hr {
+              width: 503px;
+              border: 0.5px solid #f3efef;
+            }
+
+            .count- {
+              text-decoration: line-through;
+              color: #83898c;
+              font-size: 15px;
+              font-weight: 500;
+              margin-left: 10px;
+            }
+
+            .discount-priceBox {
+              margin-left: 10px;
+            }
+
+            .discount {
+              font-size: 17px;
+              font-weight: 700;
+              color: #f87600;
+            }
+
+            .price {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .efcInfo {
+              width: 530px;
+              height: 112px;
+              display: flex;
+              box-sizing: border-box;
+            }
+
+            .efcInfo1 {
+              width: 20%;
+              box-sizing: border-box;
+              margin-left: 10px;
+              font-size: 14px;
+              font-weight: 500;
+            }
+
+            .efcInfo2 {
+              width: 70%;
+              box-sizing: border-box;
+              margin: 10px;
+              font-size: 14px;
+              font-weight: 500;
+            }
+
+            .efcInfo2Color {
+              color: #f87600;
+              font-weight: 700;
+            }
+
+            .efcInfo3 {
+              width: 10%;
+              font-size: 16px;
+              box-sizing: border-box;
+              margin-left: 10px;
+              margin-top: 10px;
+            }
+
+            .gt {
+              display: block;
+              transform: rotate(90deg);
+              margin-top: 10px;
+              font-size: 20px;
+              font-weight: 600;
+            }
+
+            .crack1 {
+              width: 530px;
+              height: 8px;
+              background-color: #eff2f2;
+              box-sizing: border-box;
+            }
+
+            .salesWrpa {
+              width: 530px;
+              height: 126.65px;
+              box-sizing: border-box;
+            }
+
+            .saleAll {
+              width: 498px;
+              height: 40px;
+              box-sizing: border-box;
+              margin: 0 auto;
+              margin-top: 10px;
+              font-size: 14px;
+              font-weight: 700;
+              padding-left: 5px;
+            }
+
+            .saleAll span {
+              color: #61d377;
+            }
+
+            .saleCurrent {
+              width: 498px;
+              height: 50.65px;
+              border: 3px solid #eff2f2;
+              padding: 12px 16px 12px 16px;
+              margin: 0 auto;
+              box-sizing: border-box;
+              display: flex;
+              border-radius: 8px;
+              cursor: pointer;
+            }
+
+            .saleCurrent_box1 {
+              width: 20%;
+              font-size: 14px;
+              font-weight: 700;
+              color: #61d377;
+            }
+
+            .saleCurrent_box2 {
+              width: 20%;
+              font-size: 14px;
+            }
+
+            .saleCurrent_box3 {
+              width: 60%;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+            }
+
+            .gt1 {
+              display: block;
+              font-size: 20px;
+              font-weight: 600;
+              margin-top: -5px;
+            }
+
+            .info {
+              width: 530px;
+              height: 51px;
+              display: flex;
+              box-sizing: border-box;
+              flex-wrap: wrap;
+            }
+
+            .info > div {
+              margin: 10px;
+              font-size: 14px;
+              cursor: pointer;
+            }
+
+            .info > div.active {
+              font-size: 17px;
+              font-weight: 700;
+              border-bottom: 2px solid black;
+            }
+
+            .infoImg{
+              width: 530px;
+            }
+
+            .infoImg1 img{
+              width: 530px;
+              height: 745px;
+              max-width: 100%;
+            }
+
+            .infoImg2 img{
+              width: 530px;
+              height: 1161px;
+            }
+
+            .infoImg3 img{
+              width: 530px;
+              height: 600px;
+            }
+
+            .infoImg4 img{
+              width: 530px;
+              height: 288px;
+            }
+
+            .infoImg5 img{
+              width: 530px;
+              height: 703px;
+            }
+
+            .infoImg6 img{
+              width: 530px;
+              height: 692px;
+            }
+
+            .infoImg7 img{
+              width: 530px;
+              height: 632px;
+            }
+
+            .infoImg8 img{
+              width: 530px;
+              height: 632px;
+            }
+
+            .infoImg9 img{
+              width: 530px;
+              height: 330px;
+            }
+
+            .infoImg10 img{
+              width: 530px;
+              height: 1300px;
+            }
+
+            .bottom{
+              width: 530px;
+              height: 77px;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .bottomBox{
+        width: 498px;
+        height: 52px;
+        background-color: #61d377;
+        border-radius: 8px;
+        text-align: center;
+        line-height: 52px;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+      }
+           
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrpaWhol">
+      <header>
+        <div class="backBtn"><a href="store.html">&lt;</a></div>
+        <div class="homeBtn"></div>
+        <div class="product_searchBtn"></div>
+      </header>
+
+      <div class="store_etc">
+        <div class="store_etcWrap">
+          <a href="index.html">스토어 홈</a>
+          <span class="separator">&gt;</span>
+          <span class="current">기타</span>
+        </div>
+      </div>
+
+      <div class="introduceimg" id="introduceImg"></div>
+
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01" />
+      </div>
+
+      <div class="brand">
+        <div><span>지금장작</span></div>
+        <div class="brandUrl" id="shareButton"></div>
+      </div>
+
+      <div id="alertBox" class="alert">
+        <div class="alert-title">camfit.co.kr 내용:</div>
+        <div class="alert-content">링크가 복사되었습니다.</div>
+        <div class="alert-button">
+          <button onclick="closeAlert()">확인</button>
+        </div>
+      </div>
+
+      <div class="Description">큐브 장작 불멍 미니 장작 캠핑 3kg</div>
+      <hr />
+
+      <div class="count-">16,000원</div>
+      <div class="discount-priceBox">
+        <span class="discount">25%</span>
+        <span class="price">12,050원</span>
+      </div>
+
+      <hr />
+
+      <div class="efcInfo">
+        <div class="efcInfo1">
+          <p>적립</p>
+          <p>배송</p>
+        </div>
+        <div class="efcInfo2">
+          <div>최대<span class="efcInfo2Color">361P</span>적립</div>
+          <p>일반택배</p>
+          <p>무료배송</p>
+        </div>
+        <div class="efcInfo3"><span class="gt">&gt;</span></div>
+      </div>
+
+      <div class="crack1"></div>
+
+      <div class="salesWrpa">
+        <div class="saleAll">이 상품의 모든 판매자 <span>1</span>명</div>
+        <div class="saleCurrent">
+          <div class="saleCurrent_box1">현재상품</div>
+          <div class="saleCurrent_box2">생활공간센터</div>
+          <div class="saleCurrent_box3"><span class="gt1">&gt;</span></div>
+        </div>
+      </div>
+
+      <div class="crack1"></div>
+
+      <div class="infoWrap">
+        <div class="info">
+          <div>기본정보</div>
+          <div>사용리뷰</div>
+          <div>구매리뷰</div>
+          <div>추천</div>
+          <div>문의</div>
+        </div>
+      </div>
+
+      <div class="infoImg">
+        <div>
+          <div class="infoImg1"><img src="/images/persnal/store/조선의떌감info4.jpg" /></div>
+          <div class="infoImg2"><img src="/images/persnal/store/조선의떌감info5.jpg" /></div>
+          <div class="infoImg3"><img src="/images/persnal/store/조선의떌감info6.jpg" /></div>
+          <div class="infoImg4"><img src="/images/persnal/store/조선의떌감info7.gif" /></div>
+          <div class="infoImg5"><img src="/images/persnal/store/조선의떌감info8.jpg" /></div>
+          <div class="infoImg6"><img src="/images/persnal/store/조선의떌감info9.jpg" /></div>
+          <div class="infoImg7"><img src="/images/persnal/store/조선의떌감info10.jpg" /></div>
+          <div class="infoImg8"><img src="/images/persnal/store/조선의떌감info11.jpg" /></div>
+          <div class="infoImg9"><img src="/images/persnal/store/조선의떌감info12.jpg" /></div>
+          <div class="infoImg10">
+            <img src="/images/persnal/store/조선의떌감info13.jpg" />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <nav class="bottom">
+        <div class="bottomBox">바로구매</div>
+      </nav>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 검색 버튼 클릭 시 검색 페이지로 이동
+        var searchButton = document.querySelector(".product_searchBtn"); // 검색 버튼 요소를 선택
+        if (searchButton) {
+          // 검색 버튼이 존재하는지 확인
+          searchButton.addEventListener("click", function () {
+            window.location.href = "store_search.html"; // 클릭 시 검색 페이지로 이동
+          });
+        }
+
+        // 홈 버튼 클릭 시 홈 페이지로 이동
+        var homeButton = document.querySelector(".homeBtn"); // 홈 버튼 요소를 선택
+        if (homeButton) {
+          // 홈 버튼이 존재하는지 확인
+          homeButton.addEventListener("click", function () {
+            window.location.href = "index.html"; // 클릭 시 홈 페이지로 이동
+          });
+        }
+
+        // 이미지 클릭 시 모달을 띄우는 기능
+        var modal = document.getElementById("myModal"); // 모달 요소를 선택
+        var img = document.getElementById("introduceImg"); // 이미지 요소를 선택
+        var modalImg = document.getElementById("img01"); // 모달 안의 이미지 요소를 선택
+        var closeBtn = document.getElementsByClassName("close")[0]; // 모달 닫기 버튼을 선택
+
+        img.onclick = function () {
+          // 이미지 클릭 시
+          modal.style.display = "block"; // 모달을 보이도록 설정
+          modalImg.src = "/images/떌감소개.png"; // 모달 이미지의 소스를 설정
+        };
+
+        closeBtn.onclick = function () {
+          // 모달 닫기 버튼 클릭 시
+          modal.style.display = "none"; // 모달을 숨김
+        };
+
+        window.onclick = function (event) {
+          // 창 전체 클릭 시
+          if (event.target == modal) {
+            // 클릭된 대상이 모달일 경우
+            modal.style.display = "none"; // 모달을 숨김
+          }
+        };
+
+        // 공유 버튼 클릭 시 알림을 띄우는 기능
+        var shareButton = document.getElementById("shareButton"); // 공유 버튼 요소를 선택
+        shareButton.onclick = function () {
+          // 공유 버튼 클릭 시
+          var alertBox = document.getElementById("alertBox"); // 알림 창 요소를 선택
+          alertBox.style.display = "block"; // 알림 창을 보이도록 설정
+        };
+
+        // info 섹션 내 div 요소 클릭 시 스타일 변경 기능
+        var infoDivs = document.querySelectorAll(".info > div"); // info 섹션 내 모든 div 요소를 선택
+
+        infoDivs.forEach(function (div) {
+          // 각 div 요소에 대해
+          div.addEventListener("click", function () {
+            // 클릭 이벤트를 추가
+            infoDivs.forEach(function (d) {
+              // 모든 div 요소에 대해
+              d.classList.remove("active"); // active 클래스 제거
+            });
+            this.classList.add("active"); // 클릭된 요소에 active 클래스 추가
+          });
+        });
+      });
+
+      // 알림 창 닫기 함수
+      function closeAlert() {
+        var alertBox = document.getElementById("alertBox"); // 알림 창 요소를 선택
+        alertBox.style.display = "none"; // 알림 창을 숨김
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 현재 상품 클릭 시 saler.html로 이동
+        var saleC = document.querySelector(".saleCurrent"); // 현재 상품 요소를 선택
+        if (saleC) {
+          // 현재 상품 요소가 존재하는지 확인
+          saleC.addEventListener("click", function () {
+            window.location.href = "saler.html"; // 클릭 시 saler.html 페이지로 이동
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
